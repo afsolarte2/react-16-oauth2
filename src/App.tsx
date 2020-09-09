@@ -1,8 +1,15 @@
 import React from 'react';
+
+import {hello} from './services/Application.service'
+
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const callHelloEndpoint = async () => {
+    await hello()
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -12,11 +19,9 @@ function App() {
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+          onClick={callHelloEndpoint}
         >
-          Learn React
+          Call Hello endpoint
         </a>
       </header>
     </div>
